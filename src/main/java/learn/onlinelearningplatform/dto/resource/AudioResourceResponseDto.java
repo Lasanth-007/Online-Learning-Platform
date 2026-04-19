@@ -7,5 +7,5 @@ public record AudioResourceResponseDto(
         String url,
         String resourceType,
         String audioFormat
-) {
+) implements ResourceResponseDto {
 }

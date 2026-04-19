@@ -8,5 +8,5 @@ public record VideoResourceResponseDto(
         String resourceType,
         Integer seconds,
         String resolution
-) {
+) implements ResourceResponseDto {
 }

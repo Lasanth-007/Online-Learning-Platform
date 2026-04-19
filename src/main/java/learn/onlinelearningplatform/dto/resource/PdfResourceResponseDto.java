@@ -7,5 +7,5 @@ public record PdfResourceResponseDto(
         String url,
         String resourceType,
         String type
-) {
+) implements ResourceResponseDto {
 }

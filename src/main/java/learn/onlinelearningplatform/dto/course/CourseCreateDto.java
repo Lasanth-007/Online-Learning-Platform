@@ -1,6 +1,6 @@
 package learn.onlinelearningplatform.dto.course;
 
-public record CourseCreateDTO(
+public record CourseCreateDto(
         String title,
         String description,
         Double price,

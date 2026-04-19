@@ -1,6 +1,6 @@
 package learn.onlinelearningplatform.dto.section;
 
-public record SelectionCreateDto(
+public record SectionCreateDto(
         String title,
         Long courseId
 ) {
