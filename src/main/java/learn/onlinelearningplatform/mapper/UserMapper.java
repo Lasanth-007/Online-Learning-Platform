@@ -6,12 +6,14 @@ import learn.onlinelearningplatform.dto.user.UserResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
 
 @Mapper(
     componentModel = "spring",
-    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE
+    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public interface UserMapper {
 
@@ -20,7 +22,5 @@ public interface UserMapper {
     List<UserResponseDto> toResponseDtoList(List<User> users);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "createdTime", ignore = true)
-    @Mapping(target = "updatedTime", ignore = true)
     User toEntity(UserCreateDto dto);
 }

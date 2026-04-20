@@ -5,33 +5,31 @@ import learn.onlinelearningplatform.Entity.Pdf;
 import learn.onlinelearningplatform.Entity.Resource;
 import learn.onlinelearningplatform.Entity.Video;
 import learn.onlinelearningplatform.dto.resource.*;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 
 import java.util.List;
 
 @Mapper(
     componentModel = "spring",
-    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE
+    nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public interface ResourceMapper {
 
-    // ==================== Basic Mappings ====================
-    ResourceResponseDto toResourceResponseDto(Resource resource);
 
     VideoResourceResponseDto toVideoResponseDto(Video video);
     AudioResourceResponseDto toAudioResponseDto(Audio audio);
     PdfResourceResponseDto toPdfResponseDto(Pdf pdf);
 
-    // ==================== Polymorphic Entity → Response DTO ====================
+    @Named("complexResourceMapping")
     default ResourceResponseDto toResponseDto(Resource resource) {
         return switch (resource) {
             case null -> null;
             case Video video -> toVideoResponseDto(video);
             case Audio audio -> toAudioResponseDto(audio);
             case Pdf pdf -> toPdfResponseDto(pdf);
-            default -> toResourceResponseDto(resource);
+            default -> throw new IllegalStateException("Unexpected value: " + resource);
+
         };
 
     }

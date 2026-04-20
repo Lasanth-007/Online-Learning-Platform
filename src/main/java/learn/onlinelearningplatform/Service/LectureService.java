@@ -1,4 +1,4 @@
-package Service;
+package learn.onlinelearningplatform.Service;
 
 import jakarta.transaction.Transactional;
 import learn.onlinelearningplatform.Entity.Lecture;
@@ -12,20 +12,20 @@ import learn.onlinelearningplatform.mapper.ResourceMapper;
 import learn.onlinelearningplatform.repositories.LectureRepository;
 import learn.onlinelearningplatform.repositories.SectionRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class LectureService {
 
     private final LectureRepository lectureRepository;
     private final SectionRepository sectionRepository;
     private final LectureMapper lectureMapper;
     private final ResourceMapper resourceMapper;
-    private final ApplicationEventPublisher applicationEventPublisher;
 
     //POST - Create
     @Transactional

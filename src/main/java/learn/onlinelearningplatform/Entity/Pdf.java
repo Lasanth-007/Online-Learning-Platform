@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @DiscriminatorValue("PDF")
-@Builder
+@SuperBuilder
 public class Pdf extends Resource{
     private String type;
 }

@@ -11,12 +11,13 @@ import java.util.List;
 @Mapper(
     componentModel = "spring",
     nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-    uses = ResourceMapper.class   // Important: uses the ResourceMapper we created earlier
+    uses = ResourceMapper.class,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public interface LectureMapper {
 
     @Mapping(target = "sectionId", source = "section.id")
-    @Mapping(target = "resource", source = "resource")
+    @Mapping(target = "resource", source = "resource", qualifiedByName = "complexResourceMapping")
     LectureResponseDto toResponseDto(Lecture lecture);
 
     @Mapping(target = "sectionId", source = "section.id")

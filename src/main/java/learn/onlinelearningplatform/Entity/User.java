@@ -1,5 +1,6 @@
 package learn.onlinelearningplatform.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
@@ -13,7 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 @Table(name = "users")
 public class User extends BaseEntity {
 
@@ -27,16 +28,21 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private Role role;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "instructor")
+    @Builder.Default
     private List<Course> Courses = new ArrayList<>();
 
+    @JsonManagedReference
     @OneToMany(
             mappedBy = "user",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+    @Builder.Default
     private List<Enrollment> enrollments = new ArrayList<>();
 
+    @Builder.Default
     private boolean enabled = true;
 
 }

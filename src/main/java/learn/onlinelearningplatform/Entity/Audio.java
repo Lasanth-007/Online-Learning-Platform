@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @DiscriminatorValue("AUDIO")
 public class Audio extends Resource{
 
