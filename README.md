@@ -1,6 +1,5 @@
-Online Learning Platform
 
-A mini **Online Learning Platform** 
+#A mini **Online Learning Platform** 
 
 This project demonstrates modern Spring Boot development practices including proper entity relationships, polymorphic inheritance, DTO mapping, and clean architecture.
 
