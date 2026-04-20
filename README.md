@@ -1,15 +1,15 @@
 
-# Online Learning Platform
+# 🎓Online Learning Platform
 
 This project demonstrates modern Spring Boot development practices including proper entity relationships, polymorphic inheritance, DTO mapping, and clean architecture.
 
 ## Features
 
-- User management with roles (Student, Instructor)
-- Course management with instructor assignment
-- Polymorphic resources (Video, Audio, PDF)
-- Student enrollment system with composite keys
-- Proper audit fields (createdTime, updatedTime)
+- 👤 User Management with roles (Student, Instructor)
+- 📚 Course Management with instructor assignment
+- 📽️ Polymorphic Resources (Video, Audio, PDF)
+- 📝 Student Enrollment system with composite keys
+- 🕒 Audit Fields (createdTime, updatedTime)
 
 ## Technologies Used
 
@@ -22,14 +22,15 @@ This project demonstrates modern Spring Boot development practices including pro
 - **Validation**: Jakarta Validation
 
 ## Project Structure
+
 src/main/java/learn/onlinelearningplatform/
-├── entity/              # JPA Entities
-├── dto/                 # Data Transfer Objects (Records)
-├── mapper/              # MapStruct Mappers
-├── repository/          # Spring Data JPA Repositories
-├── service/             # Business Logic
-├── controller/          # REST Controllers
-└── OnlineLearningPlatformApplication.java
+├── 📁 controller/    # REST API Endpoints & Request Handling
+├── 📁 dto/           # Data Transfer Objects for API Requests/Responses
+├── 📁 entity/        # JPA/Hibernate Database Models
+├── 📁 mapper/        # MapStruct Interfaces for DTO-Entity Conversion
+├── 📁 repository/    # Spring Data JPA Repositories (Data Access Layer)
+├── 📁 service/       # Business Logic & Service Interfaces
+└── 📄 OnlineLearningPlatformApplication.java  # Main Application Entry Point
 
 
 ## Main Entities
@@ -44,7 +45,7 @@ src/main/java/learn/onlinelearningplatform/
 
 ## API Endpoints
 
-### Users
+### 👤 Users
 `POST /users` - Create user
 `GET /users` - Get all users
 `GET /users/{id}` - Get user by ID
@@ -53,13 +54,13 @@ src/main/java/learn/onlinelearningplatform/
 `PATCH /users/{id}` - Patch user (Partial update)
 `DELETE /users/{id}` - Delete user
 
-### Courses
+### 📚 Courses
 - `POST /api/courses` - Create course
 - `GET /api/courses` - Get all courses
 - `GET /api/courses/{id}` - Get course by ID
 - `GET /api/courses/instructor/{instructorId}` - Get courses by instructor
 
-### Sections
+### 📑 Sections
 `POST /api/sections` - Create section
 `GET /api/sections/course/{courseId}` - Get sections by course ID
 `GET /api/sections/{id}` - Get section by ID
@@ -67,20 +68,20 @@ src/main/java/learn/onlinelearningplatform/
 `PATCH /api/sections/{id}` - Patch section
 `DELETE /api/sections/{id}` - Delete section
 
-### Lectures
+### 👨‍🏫 Lectures
 `POST /api/lectures` - Create lecture
 `GET /api/lectures/{id}` - Get lecture by ID
 `PUT /api/lectures/{id}` - Update lecture
 `PATCH /api/lectures/{id}` - Patch lecture
 `DELETE /api/lectures/{id}` - Delete lecture
 
-### Enrollments
+### 🧐 Enrollments
 `POST /api/enrollments` - Enroll user in course
 `GET /api/enrollments/user/{userId}` - Get user's enrollments
 `GET /api/enrollments/course/{courseId}` - Get course's enrollments
 `DELETE /api/enrollments/user/{userId}/course/{courseId}` - Unenroll
 
-## Setup Instructions
+## ⚙️ Setup Instructions
 
 1. Clone the repository
 2. Create a PostgreSQL database named `learning_platform`
