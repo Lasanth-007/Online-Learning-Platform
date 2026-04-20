@@ -21,15 +21,16 @@ This project demonstrates modern Spring Boot development practices including pro
 - **Build Tool**: Maven
 - **Validation**: Jakarta Validation
 
-## Project Structure
+## 📂 Project Structure
 
+```text
 src/main/java/learn/onlinelearningplatform/
-├── 📁 controller/    # REST API Endpoints & Request Handling
-├── 📁 dto/           # Data Transfer Objects for API Requests/Responses
-├── 📁 entity/        # JPA/Hibernate Database Models
-├── 📁 mapper/        # MapStruct Interfaces for DTO-Entity Conversion
-├── 📁 repository/    # Spring Data JPA Repositories (Data Access Layer)
-├── 📁 service/       # Business Logic & Service Interfaces
+├── 📁 controller/  # REST API Endpoints & Request Handling
+├── 📁 dto/         # Data Transfer Objects for API Requests/Responses
+├── 📁 entity/      # JPA/Hibernate Database Models
+├── 📁 mapper/      # MapStruct Interfaces for DTO-Entity Conversion
+├── 📁 repository/  # Spring Data JPA Repositories (Data Access Layer)
+├── 📁 service/     # Business Logic & Service Interfaces
 └── 📄 OnlineLearningPlatformApplication.java  # Main Application Entry Point
 
 
