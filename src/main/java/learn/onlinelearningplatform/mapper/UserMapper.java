@@ -2,11 +2,9 @@ package learn.onlinelearningplatform.mapper;
 
 import learn.onlinelearningplatform.Entity.User;
 import learn.onlinelearningplatform.dto.user.UserCreateDto;
+import learn.onlinelearningplatform.dto.user.UserPatchDto;
 import learn.onlinelearningplatform.dto.user.UserResponseDto;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -23,4 +21,11 @@ public interface UserMapper {
 
     @Mapping(target = "id", ignore = true)
     User toEntity(UserCreateDto dto);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "id", ignore = true)
+    void patchUser(UserPatchDto dto, @MappingTarget User user);
+
+
+    void updateUser(UserCreateDto dto,@MappingTarget User user);
 }

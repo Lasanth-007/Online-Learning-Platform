@@ -2,11 +2,9 @@ package learn.onlinelearningplatform.mapper;
 
 import learn.onlinelearningplatform.Entity.Course;
 import learn.onlinelearningplatform.dto.course.CourseCreateDto;
+import learn.onlinelearningplatform.dto.course.CoursePatchDto;
 import learn.onlinelearningplatform.dto.course.CourseResponseDto;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -25,4 +23,11 @@ public interface CourseMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "instructor", ignore = true)
     Course toEntity(CourseCreateDto dto);
+
+    void updateCourseFromDto(CourseCreateDto dto, @MappingTarget Course course);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "instructor", ignore = true)
+    void updateCourseFromPatch(CoursePatchDto dto, @MappingTarget Course course);
 }

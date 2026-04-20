@@ -2,11 +2,9 @@ package learn.onlinelearningplatform.mapper;
 
 import learn.onlinelearningplatform.Entity.Section;
 import learn.onlinelearningplatform.dto.section.SectionCreateDto;
+import learn.onlinelearningplatform.dto.section.SectionPatchDto;
 import learn.onlinelearningplatform.dto.section.SectionResponseDto;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -25,4 +23,10 @@ public interface SectionMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "course", ignore = true)
     Section toEntity(SectionCreateDto dto);
+
+
+    void updateSectionFromDto(SectionCreateDto dto, @MappingTarget Section section);
+
+
+    void updateSectionFromPatch(SectionPatchDto dto, @MappingTarget Section section);
 }
