@@ -96,6 +96,24 @@ src/main/java/learn/onlinelearningplatform/
 
 The application will automatically create the necessary tables using JPA.
 
+## Few code preview
+
+- Entity
+![entity.png](assets/screenshots/entity.png)
+- Controller 
+![controller.png](assets/screenshots/controller.png)
+- Service
+![service.png](assets/screenshots/service.png)
+- Repository
+![repository.png](assets/screenshots/repository.png)
+- Mapper
+![mapper.png](assets/screenshots/mapper.png)
+
+
+
+## Future Improvements
+- adding interactive UI with Js/React
+
 ## Tech Highlights
 
 - Single Table Inheritance for Resources (Video, Audio, PDF)
