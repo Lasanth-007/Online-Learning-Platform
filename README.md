@@ -113,6 +113,7 @@ The application will automatically create the necessary tables using JPA.
 
 ## Future Improvements
 - adding interactive UI with Js/React
+- adding Authentication/Autherization
 
 ## Tech Highlights
 
