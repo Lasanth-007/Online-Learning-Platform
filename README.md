@@ -1,6 +1,6 @@
 
 # 🎓Online Learning Platform
-## (focused on Entity relationships and JPA)
+## (Focused on Entity relationships and JPA)
 
 This project demonstrates modern Spring Boot development practices including proper entity relationships, polymorphic inheritance, DTO mapping, and clean architecture.
 
