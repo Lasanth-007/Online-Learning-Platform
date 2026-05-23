@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/enrollments")
 @RequiredArgsConstructor
+@CrossOrigin (origins = "http://localhost:3000")
 public class EnrollmentController {
 
     private final EnrollmentService enrollmentService;
